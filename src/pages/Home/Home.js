@@ -16,8 +16,8 @@ const Home = () => {
     return (
         <div>
             <Carousel variant="dark">
-                <Carousel.Item interval={1000}>
-                    <div className='w-100 d-flex flex-column justify-content-center align-items-center text-center' style={{ backgroundImage: 'url("https://www.gofluent.com/blog/wp-content/uploads/2017/10/Advantages-of-Language-Training-Rectangle.jpg")', backgrondPosition: 'center center', backgroundSize: 'cover', height: '90vh' }}>
+                <Carousel.Item interval={1000} >
+                    <div className='w-100 d-flex flex-column justify-content-center align-items-center text-center ' style={{ backgroundImage: 'url("https://www.gofluent.com/blog/wp-content/uploads/2017/10/Advantages-of-Language-Training-Rectangle.jpg")', backgrondPosition: 'center center', backgroundSize: 'cover', height: '90vh' }}>
                         <h1 className='text-white '>Best language learning Platform </h1>
                         <p className='w-50 text-white '>It takes only 10 minutes a day to learn on Learning language club. With lessons that are grounded in real-life conversations. </p>
                         <Button style={{ backgroundColor: 'rgb(255, 58, 45)', borderRadius: '30px', padding: '8px 15px', border: 'none' }} >Our courses</Button>
@@ -25,7 +25,7 @@ const Home = () => {
                     </div>
                 </Carousel.Item >
                 <Carousel.Item interval={500}>
-                    <div className='w-100 d-flex flex-column justify-content-center align-items-center text-center' style={{ backgroundImage: 'url("https://cdn.nbyula.com/public/613b4f52bfb63300e0b8fded/497-e1453684438903-768x433-500x500.jpeg")', backgrondPosition: 'center center', backgroundSize: 'cover', height: '90vh' }}>
+                    <div className='w-100 d-flex flex-column justify-content-center align-items-center text-center' style={{ backgroundImage: 'url("https://cdn.nbyula.com/public/613b4f52bfb63300e0b8fded/497-e1453684438903-768x433-500x500.jpeg")', backgrondPosition: 'center center', backgroundSize: 'cover', height: '90vh', backgroundColor: 'rgba(24, 24, 24, 0.55)' }}>
                         <h1 className='text-white '>Best tools for self-studying</h1>
                         <p className='w-50 text-white '>One of the best tools for self-studying, Ling features interactive lessons that cater to learners of all proficiency levels. </p>
                         <Button style={{ backgroundSize: 'cover', backgroundColor: 'rgb(255, 58, 45)', borderRadius: '30px', padding: '8px 15px', border: 'none' }} >Our courses</Button>
@@ -51,15 +51,15 @@ const Home = () => {
 
                         </Col>
                         <Col xs={12} md={6} sm={12} lg='8'>
-                            <p >ABOUT OUR UNIVERSITY</p>
-                            <h2>Take A Tour</h2>
-                            <p>Donec rutrum ut nunc in faucibus. Nulla facilisi. Praesent fringilla sapien vitae sollicitudin pellentesque. Nam pharetra mauris eget dolor ultrices condimentum.
+                            <p className='pb-0' style={{ color: 'rgb(255, 58, 45)' }} >ABOUT OUR UNIVERSITY</p>
+                            <h2 className='fw-bold mt-0'>Take A Tour</h2>
+                            <p>Welcome to Learn Languages Club! This is your stop for finding the best language learning resources—apps, books, podcasts, videos, online courses and virtual tutors. Mix it up and you'll be on your way to a well-rounded fluency.
 
                                 Morbi ac nisl dolor. Nam luctus accumsan diam, quis varius dolor rhoncus eget. Nunc malesuada dignissim volutpat. Nunc eu tincidunt mi, eu dapibus elit.</p>
                             <ul>
-                                <li>Education is extremely important because you overcome superstitions.</li>
-                                <li>Education is extremely important because you overcome superstitions.</li>
-                                <li>Education is extremely important because you overcome superstitions.</li>
+                                <li>Active learning through gamified lessons that make you want to keep advancing to the next level</li>
+                                <li>To help you learn how to speak like a local, Memrise combines immersive learning and scientific memory techniques.</li>
+                                <li>TruAccent technology and recordings of native speakers are what fine-tune your pronunciation.</li>
                             </ul>
                             <Button style={{ backgroundColor: 'rgb(255, 58, 45)', borderRadius: '30px', padding: '8px 15px', border: 'none' }} >About us</Button>
                         </Col>
@@ -71,7 +71,7 @@ const Home = () => {
                 <div>
                     <h1 className='text-center py-5'>Our Popular Courses</h1>
                     <div>
-                        <Container>
+                        <Container className='d-flex flex-column justify-content-center align-items-center text-center'>
                             <Row>
                                 <Col xs={12} md={12} sm={12} lg='4' >
                                     <Card className="bg-dark text-white">
@@ -105,6 +105,7 @@ const Home = () => {
                                 </Col>
 
                             </Row>
+                            <Button style={{ marginTop: '30px', backgroundSize: 'cover', backgroundColor: 'rgb(255, 58, 45)', borderRadius: '30px', padding: '8px 20px', border: 'none' }} >See all</Button>
                         </Container>
                     </div>
                 </div>
