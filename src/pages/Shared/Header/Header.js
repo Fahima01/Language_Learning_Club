@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -19,17 +20,12 @@ const Header = () => {
                         style={{ maxHeight: '100px', fontWeight: '700' }}
                         navbarScroll
                     >
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#action2">Courses</Nav.Link>
-
-                        <Nav.Link href="#">
-                            Blog
-                        </Nav.Link>
-                        <Nav.Link href="#">
-                            About us
-                        </Nav.Link>
-
+                        <Nav.Link><Link to='/'>Home</Link></Nav.Link>
+                        <Nav.Link><Link to='/courses'>Courses</Link></Nav.Link>
+                        <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
+                        <Nav.Link><Link to='/faq'>FAQ</Link></Nav.Link>
                     </Nav>
+
                     <Form className="d-flex">
 
                         <Button type="button" className="btn btn-primary me-4">Login</Button>
