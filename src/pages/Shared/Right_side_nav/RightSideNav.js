@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 
 const RightSideNav = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/course-categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+    }, [])
+
     return (
         <div>
-            <h3>right side nav</h3>
+            <h3>Courses catagories: {categories.length}</h3>
         </div>
     );
 };
