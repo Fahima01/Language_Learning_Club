@@ -12,18 +12,15 @@ const Main = () => {
 
         <div>
             <Header></Header>
-            <Container>
-                <Row>
-                    <Col xs={12} md={8} sm={12} lg='9' className='bg-primary' >
-                        <Outlet></Outlet>
 
-                    </Col>
-                    <Col xs={12} md={4} sm={12} lg='3' className='bg-info' >
+            <Row>
+                <Col xs={12} md={12} sm={12} lg='12' >
+                    <Outlet></Outlet>
 
-                        <RightSideNav></RightSideNav>
-                    </Col>
-                </Row>
-            </Container>
+                </Col>
+
+            </Row>
+
             <Footer></Footer>
         </div>
 
