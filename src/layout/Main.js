@@ -6,18 +6,20 @@ import Col from 'react-bootstrap/Col';
 const Main = () => {
     return (
 
-        <Container>
+        <div>
+            <Container>
 
-            <Row>
-                <Col xs={12} md={8} sm={8}>
-                    <Outlet></Outlet>
-                    <h2 className=''>This is main conetent container</h2>
-                </Col>
-                <Col xs={6} md={4} sm={4}>
-                    <h2>This is sidebar container</h2>
-                </Col>
-            </Row>
-        </Container>
+                <Row>
+                    <Col xs={12} md={8} sm={12} lg='9' className='bg-primary' >
+                        <Outlet></Outlet>
+                        <h2>This is main conetent container</h2>
+                    </Col>
+                    <Col xs={12} md={4} sm={12} lg='3' className='bg-info' >
+                        <h2>This is sidebar container</h2>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
 
     );
 };
