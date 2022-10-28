@@ -30,15 +30,17 @@ const CourseDetails = () => {
                                             ></Image>
                                         </div>
                                         <div>
+
                                             <p>{mentor.name}</p>
                                             <p>{mentor.published_date}</p>
                                         </div>
                                     </div>
 
-                                    <div className='d-flex'>
+                                    <div className='d-flex justify-content-center align-items-center '>
                                         <p className='me-3 '>
                                             <span className='me-2 text-warning'><FaStar></FaStar> </span> {rating.number} </p>
                                         <p className='fw-bold'>Total View: <span className='text-info'> {total_student} </span></p>
+                                        <Button style={{ marginLeft: '20px', backgroundSize: 'cover', backgroundColor: '#476282', borderRadius: '30px', padding: '8px 20px', border: 'none' }} >Download PDF </Button>
                                     </div>
 
                                 </Card.Header>
@@ -52,9 +54,9 @@ const CourseDetails = () => {
 
                                 </Card.Text>
                                 <Card.Footer className='py-3'>
-                                    <div className='d-flex justify-content-evenly align-items-center'>
-
-
+                                    <div className='d-flex justify-content-between align-items-center'>
+                                        <Button style={{ marginTop: '30px', backgroundSize: 'cover', backgroundColor: '#476282', borderRadius: '30px', padding: '8px 20px', border: 'none' }} >Price: </Button>
+                                        <Button style={{ marginTop: '30px', backgroundSize: 'cover', backgroundColor: '#00693c', borderRadius: '30px', padding: '8px 20px', border: 'none' }} >Purchase the Course</Button>
 
                                     </div>
 

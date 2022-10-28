@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Image, NavLink } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/Authprovider/AuthProvider';
 import img4 from '../../../slider-img/LanguageLA.png';
-
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
     return (
         <Navbar className='shadow-lg' bg="light" expand="lg">
             <Container fluid>
@@ -27,9 +35,43 @@ const Header = () => {
                     </Nav>
 
                     <Form className="d-flex">
+                        <Nav.Link>
 
-                        <Button type="button" className="btn btn-primary me-4">Login</Button>
-                        <Button type="button" className="btn btn-info">Signup</Button>
+                            {
+                                user?.uid ?
+                                    <>
+                                        <span>{user?.displayName}</span>
+                                        <Button onClick={handleLogOut} type="button" className="btn btn-primary me-4">
+                                            Log Out
+                                        </Button>
+                                    </>
+                                    :
+                                    <>
+
+                                        <Button type="button" className="btn btn-primary me-4">
+                                            <Link className='text-white' to='/login'>Login</Link>
+                                        </Button>
+                                        <Button type="button" className="btn btn-info">
+                                            <Link className='text-white' to='/signup'>Signup</Link>
+                                        </Button>
+                                    </>
+                            }
+
+                        </Nav.Link>
+                        <NavLink eventKey={2} >
+                            {
+                                user?.PhotoURL ?
+                                    <Image
+                                        style={{ height: '30px' }} roundedCircle
+                                        src={user?.PhotoURL}>
+
+                                    </Image>
+                                    : <FaUser></FaUser>
+
+
+                            }
+                        </NavLink>
+
                     </Form>
                 </Navbar.Collapse>
             </Container>

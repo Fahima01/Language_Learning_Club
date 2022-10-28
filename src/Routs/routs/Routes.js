@@ -5,9 +5,11 @@ import CourseDetails from "../../pages/Course_Details/CourseDetails";
 import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import LanguageCourses from "../../pages/Language_courses/LanguageCourses";
+import Login from "../../pages/login/Login";
 import Category from "../../pages/Shared/category/Category";
 import LeftsideBody from "../../pages/Shared/RightSidebody.js/LeftsideBody";
 import RightSideNav from "../../pages/Shared/Right_side_nav/RightSideNav";
+import SignUp from "../../pages/Signin/SignUp";
 
 export const routes = createBrowserRouter([
     {
@@ -44,6 +46,14 @@ export const routes = createBrowserRouter([
                 element: <CourseDetails></CourseDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
             },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
+            }
 
         ]
     }
