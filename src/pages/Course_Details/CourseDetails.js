@@ -8,7 +8,7 @@ import RightSideNav from '../Shared/Right_side_nav/RightSideNav';
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData()
-    const { id, title, rating, total_student, image_url, details, mentor } = courseDetails;
+    const { id, title, rating, total_student, image_url, details, mentor, price } = courseDetails;
     return (
         <div>
 
@@ -55,7 +55,7 @@ const CourseDetails = () => {
                                 </Card.Text>
                                 <Card.Footer className='py-3'>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <Button style={{ marginTop: '30px', backgroundSize: 'cover', backgroundColor: '#476282', borderRadius: '30px', padding: '8px 20px', border: 'none' }} >Price: </Button>
+                                        <Button style={{ marginTop: '30px', backgroundSize: 'cover', backgroundColor: '#476282', borderRadius: '30px', padding: '8px 20px', border: 'none' }} >Price: {price}</Button>
                                         <Button style={{ marginTop: '30px', backgroundSize: 'cover', backgroundColor: '#00693c', borderRadius: '30px', padding: '8px 20px', border: 'none' }} >Purchase the Course</Button>
 
                                     </div>

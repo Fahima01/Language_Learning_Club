@@ -6,10 +6,12 @@ import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import LanguageCourses from "../../pages/Language_courses/LanguageCourses";
 import Login from "../../pages/login/Login";
+import NotFound from "../../pages/NotFound";
 import Category from "../../pages/Shared/category/Category";
 import LeftsideBody from "../../pages/Shared/RightSidebody.js/LeftsideBody";
 import RightSideNav from "../../pages/Shared/Right_side_nav/RightSideNav";
 import SignUp from "../../pages/Signin/SignUp";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -43,7 +45,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/course/:id',
-                element: <CourseDetails></CourseDetails>,
+                element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
             },
             {
@@ -54,7 +56,13 @@ export const routes = createBrowserRouter([
                 path: '/signup',
                 element: <SignUp></SignUp>
             }
+        ],
 
-        ]
+
+    },
+
+    {
+        path: '*',
+        element: <NotFound></NotFound>
     }
 ]);

@@ -67,8 +67,6 @@ const Header = () => {
 
                                     </Image>
                                     : <FaUser></FaUser>
-
-
                             }
                         </NavLink>
 

@@ -11,7 +11,9 @@ const SignUp = () => {
     const { providerLogin } = useContext(AuthContext)
     const { createUser } = useContext(AuthContext);
 
+
     const googleProvider = new GoogleAuthProvider()
+
 
     const handleGooglesignIn = () => {
         providerLogin(googleProvider)
@@ -39,6 +41,7 @@ const SignUp = () => {
             })
             .catch(e => console.error(e));
     }
+
     return (
         <div className='bg-primary ' >
             <Row className='login-body ' >
