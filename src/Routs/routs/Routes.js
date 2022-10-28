@@ -6,6 +6,7 @@ import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import LanguageCourses from "../../pages/Language_courses/LanguageCourses";
 import Category from "../../pages/Shared/category/Category";
+import LeftsideBody from "../../pages/Shared/RightSidebody.js/LeftsideBody";
 import RightSideNav from "../../pages/Shared/Right_side_nav/RightSideNav";
 
 export const routes = createBrowserRouter([
@@ -19,7 +20,10 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <LanguageCourses></LanguageCourses>
+                element: <LanguageCourses></LanguageCourses>,
+                loader: () => fetch(`http://localhost:5000/course`)
+
+
             },
             {
                 path: '/blog',
@@ -32,12 +36,13 @@ export const routes = createBrowserRouter([
 
             {
                 path: '/course-categories/:id',
-                element: <Category></Category>,
+                element: <LeftsideBody></LeftsideBody>,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
                 path: '/course/:id',
-                element: <CourseDetails></CourseDetails>
+                element: <CourseDetails></CourseDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
             },
 
         ]

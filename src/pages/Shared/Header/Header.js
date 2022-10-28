@@ -4,15 +4,15 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import img4 from '../../../slider-img/f073a3ecf58cdd98f2a38a17b11d8f84.png';
 
 
 const Header = () => {
     return (
         <Navbar className='shadow-lg' bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#" > <span className='fw-bolder'>Language Learning</span>Club</Navbar.Brand>
+                <Navbar.Brand href="#" ><img style={{ maxHeight: '100px', width: '100px' }} src={img4} alt="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav

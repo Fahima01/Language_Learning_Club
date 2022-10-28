@@ -1,0 +1,23 @@
+.course-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card-img {
+    height: 200px;
+}
+
+.card {
+    height: 500px;
+}
+
+.rightsidenav {
+    background-color: lightsalmon;
+    color: crimson;
+}
+
+.detail-card-img {
+    height: 500px;
+
+}
