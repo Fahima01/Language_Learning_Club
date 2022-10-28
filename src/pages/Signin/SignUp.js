@@ -5,9 +5,22 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../Context/Authprovider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const SignUp = () => {
+    const { providerLogin } = useContext(AuthContext)
     const { createUser } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGooglesignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -57,7 +70,7 @@ const SignUp = () => {
                                 Sign Up
                             </Button>
                             <p>or,</p>
-                            <p> <button type="button" class="me-2 btn btn-outline-success">Signup with <FaGoogle></FaGoogle> </button>
+                            <p> <button onClick={handleGooglesignIn} type="button" class="me-2 btn btn-outline-success">Signup with <FaGoogle></FaGoogle> </button>
                                 <button type="button" class="btn btn-outline-secondary">Signup with <FaGithub></FaGithub> </button>
 
 
