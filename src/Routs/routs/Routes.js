@@ -25,7 +25,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <LanguageCourses></LanguageCourses>,
-                loader: () => fetch(`http://localhost:5000/course`)
+                loader: () => fetch(`https://laguage-server.vercel.app/course`)
 
 
             },
@@ -41,12 +41,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/course-categories/:id',
                 element: <LeftsideBody></LeftsideBody>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://laguage-server.vercel.app/category/${params.id}`)
             },
             {
                 path: '/course/:id',
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://laguage-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/login',
